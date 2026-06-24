@@ -1,1 +1,61 @@
-Counter
+1. Counter Challenge
+📝Problem Statement: Build a simple counter application with the following features:
+-Display the current count.
+-Increase the count by clicking the Increment button.
+-Decrease the count by clicking the Decrement button.
+-Reset the count to 0 using a Reset button.
+-The UI should update instantly whenever the count changes.
+
+🎯Objective: The goal of this challenge is to understand how React manages state and re-renders components when the state changes.
+
+🧠Concepts Used: 
+Concept                         	Why it's Used
+useState        	              To store and update the counter value.
+Functional State Update    	    Ensures the latest state is used when updating.
+Event Handling	                Handle button click events.
+Component Re-rendering	        React automatically updates the UI when state changes.
+Arrow Functions                	Used for concise event handlers.
+
+✅Optimized Solution:
+
+import { useState } from "react";
+export default function Counter() {
+  const [count, setCount] = useState(0);
+  const increment = () => setCount((prev) => prev + 1);
+  const decrement = () => setCount((prev) => prev - 1);
+  const reset = () => setCount(0);
+  return (
+    <div style={{ textAlign: "center", marginTop: "40px" }}>
+      <h1>Counter Challenge</h1>
+      <h2>{count}</h2>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+      <button onClick={reset}>Reset</button>
+    </div>
+  );
+}
+
+Time Complexity: O(1)
+Space Complexity: O(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
